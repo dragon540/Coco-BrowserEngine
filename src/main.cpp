@@ -4,12 +4,22 @@
 #include <iostream>
 #include <string>
 
+#include "lexer/fileRead.hpp"
+
 int main() {
     std::cout << "Welcome to Coco browser engine" << std::endl;
     std::string x;
-    do {
-        std::cout << ">>" << std::endl;
-        std::cin >> x;
+
+    fileRead fr;
+    std::list<std::string> :: iterator it;
+    std::list<std::string> temp;
+    temp = fr.readTempWord("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
+
+    it = temp.begin();
+    while(it!=temp.end()) {
+        std::cout << *it << std::endl;
+        std::cout << it->length() << std::endl;
+        it++;
     }
-    while(x != "exit");
+
 }
