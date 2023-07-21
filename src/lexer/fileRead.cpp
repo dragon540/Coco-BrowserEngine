@@ -10,7 +10,6 @@ std::list<std::string> fileRead::readLine(std::string filePath) {
     std::ifstream file;
     file.open(filePath);
     std::list<std::string> lineTable;
-
     if(file.is_open()) {
         while(file) {
             std::string t_line = "";
@@ -30,12 +29,24 @@ std::list<std::string> fileRead::readTempWord(std::string filePath) {
     while(it != temp.end()) {
         std::string t_line = *it;
         std::string t_word = "";
-        for(unsigned int idx = 0; idx <= t_line.length(); idx++) {
+        for(unsigned int idx = 0; idx < t_line.length(); idx++) {
             if(t_line[idx] == ' ') {
-                tempWords.push_back(t_word);
-                t_word = "";
+                if(idx != 0)
+                    tempWords.push_back(t_word);
+
+                t_word = " ";
             }
-            t_word += t_line[idx];
+            else if(t_line[idx] != ' ') {
+                if(idx>0) {
+                    if(t_line[idx-1] == ' ') {
+                        tempWords.push_back(t_word);
+                        t_word = "";
+                        t_word += t_line[idx];
+                    }
+                    else t_word += t_line[idx];
+                }
+                else t_word += t_line[idx];
+            }
             if(idx == t_line.length()-1) {
                 tempWords.push_back(t_word);
             }
