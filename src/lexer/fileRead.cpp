@@ -21,7 +21,7 @@ std::list<std::string> fileRead::readLine(std::string filePath) {
     return lineTable;
 }
 
-std::list<std::string> fileRead::readTempWord(std::string filePath) {
+std::list<std::string> fileRead::readCombinedWord(std::string filePath) {
     std::list<std::string> temp = readLine(filePath);
     std::list<std::string> tempWords;
     std::list<std::string> :: iterator it;

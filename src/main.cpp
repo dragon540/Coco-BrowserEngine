@@ -13,12 +13,12 @@ int main() {
     fileRead fr;
     std::list<std::string> :: iterator it;
     std::list<std::string> temp;
-    temp = fr.readTempWord("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
+    temp = fr.readCombinedWord("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
 
     it = temp.begin();
     while(it!=temp.end()) {
         std::cout << *it << std::endl;
-        std::cout << it->length() << std::endl;
+        //std::cout << it->length() << std::endl;
         it++;
     }
 
