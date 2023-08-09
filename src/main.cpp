@@ -9,7 +9,6 @@
 
 int main() {
     std::cout << "Welcome to Coco browser engine" << std::endl;
-    /***std::string x;
 
     htmlFileRead hfr;
     std::list<std::string> :: iterator it;
@@ -19,14 +18,7 @@ int main() {
     it = temp.begin();
     while(it!=temp.end()) {
         std::cout << *it << std::endl;
-        //std::cout << it->length() << std::endl;
         it++;
-    }***/
-    htmlFileRead hfr;
-    std::string x = "Lang</u>";
-    int c = hfr.firstInstOfTagInStr((&x));
-    std::cout << c << std::endl;
-
+    }
     return 0;
-
 }

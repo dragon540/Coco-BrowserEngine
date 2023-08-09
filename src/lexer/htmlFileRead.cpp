@@ -39,7 +39,7 @@ int htmlFileRead::firstInstOfTagInStr(std::string* combWord) {
     return conf_startTagIdx;
 }
 
-/***std::list<std::string> htmlFileRead::sepTagsAndWords(std::string filePath) {
+std::list<std::string> htmlFileRead::sepTagsAndWords(std::string filePath) {
     fileRead fr;
     std::list<std::string> comb_wrd;
     std::list<std::string> :: iterator it;
@@ -49,18 +49,15 @@ int htmlFileRead::firstInstOfTagInStr(std::string* combWord) {
     while(it != comb_wrd.end()) {
         std::string temp = *it;
         std::string new_wrd = "";
-        for(unsigned int idx = 0; idx < temp.length(); idx++) {
-            if(temp[idx] != '<' && temp[idx] != '>') {
-                new_wrd += temp[idx];
-            }
-            else {
-                if(new_wrd != "") {
-                    comb_wrd.insert(it, new_wrd);
-                    it++;
-                }
-            }
+        int tag_idx = firstInstOfTagInStr(&temp);
+        if(tag_idx > -1) {
+            std::string temp_wrd = subStrOfStr(&temp, 0, tag_idx);
+            comb_wrd.insert(it, temp_wrd);
+            temp_wrd = subStrOfStr(&temp, tag_idx, temp.length());
+            comb_wrd.insert(it, temp_wrd);
+            it = comb_wrd.erase(it);
         }
         it++;
     }
     return comb_wrd;
-}***/
+}
