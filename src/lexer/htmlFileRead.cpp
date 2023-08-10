@@ -61,27 +61,36 @@ std::list<std::string> htmlFileRead::sepTagsAndWords(std::string filePath) {
     std::list<std::string> :: iterator it;
     wrd_list = fr.readCombinedWord(filePath);
     it = wrd_list.begin();
-
     while(it != wrd_list.end()) {
         std::string curr_word = *it;
-        int tag_idx = firstIdxOfOpenBrackInStr(&curr_word);
-        if(tag_idx > -1) {
-            std::string temp_wrd = subStrOfStr(&curr_word, 0, tag_idx);
-            if(tag_idx != 0)
+        int start_idx = firstIdxOfOpenBrackInStr(&curr_word);
+
+        // if open angular bracket exist
+        if(start_idx > -1) {
+            std::string temp_wrd = subStrOfStr(&curr_word, 0, start_idx);
+            if(start_idx != 0) // if open angular bracket exists at start of string then don't substring(0, strat_idx)
+                               // as it will be empty string
                 wrd_list.insert(it, temp_wrd);
 
             int end_idx = firstIdxOfCloseBrackInStr(&curr_word);
-            if(end_idx != -1) {
-                temp_wrd = subStrOfStr(&curr_word, tag_idx, end_idx + 1);
+            if(end_idx > 0) {
+                temp_wrd = subStrOfStr(&curr_word, start_idx, end_idx + 1);
                 wrd_list.insert(it, temp_wrd);
                 temp_wrd = subStrOfStr(&curr_word, end_idx + 1, curr_word.length());
                 if(temp_wrd != "") {
                     wrd_list.insert(it, temp_wrd);
                 }
+                it = wrd_list.erase(it);
             }
-            it = wrd_list.erase(it);
+            // if the substring to the right of close angular bracket is not empty
+            if(firstIdxOfOpenBrackInStr(&temp_wrd) > -1)
+                it--;
+            else
+                it++;
         }
-        it++;
+        // if open angular bracket doesn't exist
+        else
+            it++;
     }
     return wrd_list;
 }
