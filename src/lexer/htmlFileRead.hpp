@@ -11,13 +11,18 @@
 class htmlFileRead {
 public:
     std::list<std::string> sepTagsAndWords(std::string filePath);
-
 private:
     // takes a string pointer in argument
     // and returns a substring(from position start_idx to end_idx) of the original string
     std::string subStrOfStr(std::string* original_str, unsigned int start_idx, unsigned int end_idx);
 
-    int firstInstOfTagInStr(std::string* combWord);
+    // returns the index of the position of the string
+    // where the open angular bracket is first found in the string
+    int firstIdxOfOpenBrackInStr(std::string* combWord);
+
+    // returns the index of the position of the string
+    // where the close angular bracket is first found in the string
+    int firstIdxOfCloseBrackInStr(std::string* word);
 };
 
 
