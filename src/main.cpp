@@ -16,7 +16,7 @@ int main() {
     temp = hfr.sepTagsAndWords("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
 
     it = temp.begin();
-    while(it!=temp.end()) {
+    while(it != temp.end()) {
         std::cout << *it << std::endl;
         it++;
     }
