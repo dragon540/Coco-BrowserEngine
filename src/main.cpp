@@ -6,18 +6,19 @@
 
 #include "lexer/fileRead.hpp"
 #include "lexer/htmlFileRead.hpp"
+#include "lexer/htmlTokenise.hpp"
 
 int main() {
     std::cout << "Welcome to Coco browser engine" << std::endl;
 
-    htmlFileRead hfr;
-    std::list<std::string> :: iterator it;
-    std::list<std::string> temp;
-    temp = hfr.sepTagsAndWords("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
+    htmlTokenise ht;
+    std::list<Token> :: iterator it;
+    std::list<Token> temp;
+    temp = ht.tokeniseHtml("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
 
     it = temp.begin();
     while(it != temp.end()) {
-        std::cout << *it << std::endl;
+        std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
     }
     return 0;
