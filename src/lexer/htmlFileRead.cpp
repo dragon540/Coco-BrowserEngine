@@ -5,6 +5,7 @@
 #include "htmlFileRead.hpp"
 #include "fileRead.hpp"
 
+#include <iostream>
 
 // takes a string pointer in argument
 // and returns a substring(from position start_idx to end_idx) of the original string
@@ -55,6 +56,53 @@ int htmlFileRead::firstIdxOfCloseBrackInStr(std::string* word) {
     }
 }
 
+bool htmlFileRead::isCloseComment(std::string* txt) {
+    if(txt->length() > 2) {
+        unsigned int len = txt->length();
+        if((*txt)[len - 1] == '>' && (*txt)[len - 2] == '-' && (*txt)[len - 3] == '-')
+                return true;
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
+bool htmlFileRead::isStartComment(std::string* txt) {
+    if(txt->length() > 3) {
+        if( (*txt)[0] == '<' && (*txt)[1] == '!' && (*txt)[2] == '-' && (*txt)[3] == '-' ) {
+            return true;
+        }
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
+void htmlFileRead::removeComment(std::list<std::string>* wordList) {
+    std::list<std::string> :: iterator it;
+    std::list<std::string> :: iterator temp_it;
+    it = wordList->begin();
+    while(it != wordList->end()) {
+        std::string temp_str = *it;
+        if(!isStartComment(&temp_str)) {
+            it++;
+        }
+        else if(isStartComment(&temp_str)) {
+            while(!isCloseComment(&temp_str)) {
+                temp_it = it;
+                it++;
+                wordList->erase(temp_it);
+                temp_str = *it;
+            }
+            temp_it = it;
+            it++;
+            wordList->erase(temp_it);
+        }
+    }
+}
+
 std::list<std::string> htmlFileRead::sepTagsAndWords(std::string filePath) {
     fileRead fr;
     std::list<std::string> wrd_list;
@@ -92,5 +140,7 @@ std::list<std::string> htmlFileRead::sepTagsAndWords(std::string filePath) {
         else
             it++;
     }
+    removeComment(&wrd_list);
+    //std::cout << wrd_list.size() << std::endl;
     return wrd_list;
 }
