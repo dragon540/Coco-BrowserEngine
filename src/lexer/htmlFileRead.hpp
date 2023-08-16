@@ -23,6 +23,11 @@ private:
     // returns the index of the position of the string
     // where the close angular bracket is first found in the string
     int firstIdxOfCloseBrackInStr(std::string* word);
+
+    bool isCloseComment(std::string* txt);
+    bool isStartComment(std::string* txt);
+
+    void removeComment(std::list<std::string>* wordList);
 };
 
 
