@@ -27,8 +27,9 @@ int main() {
     treeImplement ti;
     std::cout << ti.getCurrentNode() << std::endl;
     struct treeNode* t = ti.insertNode(ti.getCurrentNode());
-    //ti.setCurrentNode(t);
-    //std::cout << ti.getCurrentNode() << std::endl;
+    ti.setCurrentNode(t);
+    std::cout << ti.getCurrentNode() << std::endl;
+    //std::cout << ti.getCurrentNode()->parentNode << std::endl;
 
     return 0;
 }

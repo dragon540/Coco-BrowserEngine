@@ -16,6 +16,7 @@
 struct treeNode {
     struct treeNode* parentNode;
     std::list<struct treeNode*> childNode;
+    //struct treeNode* childNode;
     std::string txtContent = "";
     std::string imgPath = ""; // path to image file when applicable
 };
