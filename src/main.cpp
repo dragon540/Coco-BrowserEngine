@@ -8,10 +8,12 @@
 #include "lexer/htmlFileRead.hpp"
 #include "lexer/htmlTokenise.hpp"
 
+#include "nTree/treeImplement.hpp"
+
 int main() {
     std::cout << "Welcome to Coco browser engine" << std::endl;
 
-    htmlTokenise ht;
+    /***htmlTokenise ht;
     std::list<Token> :: iterator it;
     std::list<Token> temp;
     temp = ht.tokeniseHtml("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
@@ -20,6 +22,13 @@ int main() {
     while(it != temp.end()) {
         std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
-    }
+    }***/
+
+    treeImplement ti;
+    std::cout << ti.getCurrentNode() << std::endl;
+    struct treeNode* t = ti.insertNode(ti.getCurrentNode());
+    //ti.setCurrentNode(t);
+    //std::cout << ti.getCurrentNode() << std::endl;
+
     return 0;
 }
