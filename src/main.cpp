@@ -25,18 +25,47 @@ int main() {
     treeImplement ti;
 
     // printing root node
-    std::cout << ti.getCurrentNode() << std::endl;
+    std::cout << "root node - " << ti.getCurrentNode() << std::endl;
 
+    struct treeNode *l1t1, *l1t2, *l1t3;
     // 3 first level nodes created
-    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    l1t1 = ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
     ti.gotoParent(ti.getCurrentNode());
-    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    l1t2 = ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
     ti.gotoParent(ti.getCurrentNode());
-    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    l1t3 = ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
     ti.gotoParent(ti.getCurrentNode());
 
-    std::cout << "reading depth first" << std::endl;
+    // 2nd level nodes
+    // 2 children of l1t1
+    ti.setCurrentNode(l1t1);
+    std::cout << "currently adding to l1t1 - " << ti.getCurrentNode() << std::endl;
+    ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+    ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+    ti.gotoParent(ti.getCurrentNode()); // to goto root node
+
+    std::cout << "check is it level 0 node - " << ti.getCurrentNode() << std::endl;
+
+    ti.setCurrentNode(l1t2);
+    std::cout << "currently adding to l1t1 - " << ti.getCurrentNode() << std::endl;
+    ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+    ti.insertNode(ti.getCurrentNode());
+    std::cout << ti.getCurrentNode() << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+
+    std::cout << "check is it level 1 node 2 - " << ti.getCurrentNode() << std::endl;
+
+    //std::cout << "reading depth first" << std::endl;
     // not working properly
-    ti.depthFirstRead(ti.getCurrentNode());
+    //ti.depthFirstRead(ti.getCurrentNode());
     return 0;
 }
