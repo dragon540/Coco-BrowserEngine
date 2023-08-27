@@ -22,10 +22,42 @@ struct treeNode* treeImplement::getCurrentNode() {
 void treeImplement::setCurrentNode(struct treeNode *node) {
     currNode = node;
 }
+
+// creates a child node for the pNode
+// then sets the current node to this newly created node
 struct treeNode* treeImplement::insertNode(struct treeNode *pNode) {
     struct treeNode* node = new struct treeNode;
     node->parentNode = pNode;
     //std::cout << pNode->childNode.size() << std::endl;
     pNode->childNode.push_back(node);
+    setCurrentNode(node);
     return node;
+}
+
+// sets current node to the parent node of the given node
+void treeImplement::gotoParent(struct treeNode* cNode) {
+    if(cNode->parentNode == NULL)
+        setCurrentNode(cNode);
+    else
+        setCurrentNode(cNode->parentNode);
+}
+
+/*** REMOVE FOLLOWING COMMENTS ONCE FUNCTION IS FIXED***/
+// this function is not working properly
+// just leaving as it is to get blueprint for later
+void treeImplement::depthFirstRead(struct  treeNode* root_ptr) {
+    std::list<struct treeNode*> :: iterator it;
+    it = root_ptr->childNode.begin();
+    if((root_ptr->childNode).size() == 0) {
+        std::cout << root_ptr << std::endl;
+        std::cout << "leaf node" << std::endl;
+    }
+    else {
+        while(it != root_ptr->childNode.end()) {
+            depthFirstRead(*it);
+            std::cout << root_ptr << std::endl;
+            std::cout << "left node" << std::endl;
+            it++;
+        }
+    }
 }

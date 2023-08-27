@@ -29,7 +29,9 @@ public:
     treeImplement(); // creates a root node
     struct treeNode* getCurrentNode();
     void setCurrentNode(struct treeNode* node);
-    struct treeNode* insertNode(struct treeNode* pNode);
+    struct treeNode* insertNode(struct treeNode* pNode); // creates a child node for the pNode
+    void gotoParent(struct treeNode* cNode); // sets current node to the parent node of the given node
+    void depthFirstRead(struct  treeNode* root_ptr);
 };
 
 #endif //COCO_BROWSERENGINE_TREEIMPLEMENT_HPP

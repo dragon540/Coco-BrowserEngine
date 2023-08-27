@@ -12,7 +12,6 @@
 
 int main() {
     std::cout << "Welcome to Coco browser engine" << std::endl;
-
     /***htmlTokenise ht;
     std::list<Token> :: iterator it;
     std::list<Token> temp;
@@ -23,13 +22,21 @@ int main() {
         std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
     }***/
-
     treeImplement ti;
-    std::cout << ti.getCurrentNode() << std::endl;
-    struct treeNode* t = ti.insertNode(ti.getCurrentNode());
-    ti.setCurrentNode(t);
-    std::cout << ti.getCurrentNode() << std::endl;
-    //std::cout << ti.getCurrentNode()->parentNode << std::endl;
 
+    // printing root node
+    std::cout << ti.getCurrentNode() << std::endl;
+
+    // 3 first level nodes created
+    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+    std::cout << ti.insertNode(ti.getCurrentNode()) << std::endl;
+    ti.gotoParent(ti.getCurrentNode());
+
+    std::cout << "reading depth first" << std::endl;
+    // not working properly
+    ti.depthFirstRead(ti.getCurrentNode());
     return 0;
 }
