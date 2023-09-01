@@ -16,7 +16,7 @@
 struct treeNode {
     struct treeNode* parentNode;
     std::list<struct treeNode*> childNode;
-    //struct treeNode* childNode;
+    int tag_id;
     std::string txtContent = "";
     std::string imgPath = ""; // path to image file when applicable
 };
@@ -33,9 +33,10 @@ public:
     void gotoParent(struct treeNode* cNode); // sets current node to the parent node of the given node
     void depthFirstRead(struct  treeNode* root_ptr);
 
-    //data addition
-    void addtxtContent(treeNode* node, std::string text);
-    void addImgPath(treeNode* node, std::string path);
+    // assigns a tag id to the node pointed through the pointer in the function argument depending upon the tag
+    void addTagID(struct treeNode* node, std::string tag);
+    void addtxtContent(struct treeNode* node, std::string text);
+    void addImgPath(struct treeNode* node, std::string path);
 };
 
 #endif //COCO_BROWSERENGINE_TREEIMPLEMENT_HPP

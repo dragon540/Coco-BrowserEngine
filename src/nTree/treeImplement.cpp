@@ -61,10 +61,14 @@ void treeImplement::depthFirstRead(struct  treeNode* root_ptr) {
         }
     }
 }
-
-void treeImplement::addtxtContent(treeNode *node, std::string text) {
+void treeImplement::addTagID(struct treeNode* node, std::string tag) {
+    if(tag == "<html>") node->tag_id = 83;
+    else if(tag == "<head>") node->tag_id = 84;
+    // add more
+}
+void treeImplement::addtxtContent(struct treeNode *node, std::string text) {
     node->txtContent = text;
 }
-void treeImplement::addImgPath(treeNode *node, std::string path) {
+void treeImplement::addImgPath(struct treeNode *node, std::string path) {
     node->imgPath = path;
 }
