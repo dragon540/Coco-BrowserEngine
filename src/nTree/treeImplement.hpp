@@ -32,6 +32,10 @@ public:
     struct treeNode* insertNode(struct treeNode* pNode); // creates a child node for the pNode
     void gotoParent(struct treeNode* cNode); // sets current node to the parent node of the given node
     void depthFirstRead(struct  treeNode* root_ptr);
+
+    //data addition
+    void addtxtContent(treeNode* node, std::string text);
+    void addImgPath(treeNode* node, std::string path);
 };
 
 #endif //COCO_BROWSERENGINE_TREEIMPLEMENT_HPP

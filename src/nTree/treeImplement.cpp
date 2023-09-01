@@ -61,3 +61,10 @@ void treeImplement::depthFirstRead(struct  treeNode* root_ptr) {
         }
     }
 }
+
+void treeImplement::addtxtContent(treeNode *node, std::string text) {
+    node->txtContent = text;
+}
+void treeImplement::addImgPath(treeNode *node, std::string path) {
+    node->imgPath = path;
+}
