@@ -30,6 +30,9 @@ struct treeNode* htmlParse::htmlParser(std::string fPath) {
             case OPENING_TAG:
                 // create node and set current node pointer to this new node
                 createAndSetPtr();
+
+                // add tag id to the node
+                DOM_tree.addTagID(DOM_tree.getCurrentNode(), it->tok_val);
                 break;
             case CLOSING_TAG:
                 // set current tree node pointer to parent node
