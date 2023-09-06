@@ -46,4 +46,5 @@ struct treeNode* htmlParse::htmlParser(std::string fPath) {
         // to read next token
         it++;
     }
+    return (struct treeNode*)DOM_root;
 }

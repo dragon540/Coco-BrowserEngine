@@ -44,8 +44,8 @@ void treeImplement::gotoParent(struct treeNode* cNode) {
 
 
 void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
-    //std::cout << root_ptr->tag_id << std::endl;
-    std::cout << root_ptr << std::endl;
+    std::cout << root_ptr->tag_id << std::endl;
+    std::cout << root_ptr->txtContent << std::endl;
     std::list<treeNode*> :: iterator it;
     it = root_ptr->childNode.begin();
     while(it != root_ptr->childNode.end()) {
@@ -54,8 +54,14 @@ void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
     }
 }
 void treeImplement::addTagID(struct treeNode* node, std::string tag) {
-    if(tag == "<html>") node->tag_id = 83;
-    else if(tag == "<head>") node->tag_id = 84;
+    if(tag == "<Html>") node->tag_id = 83;
+    else if(tag == "<Head>") node->tag_id = 84;
+    else if(tag == "<title>") node->tag_id = 85;
+    else if(tag == "<Body>") node->tag_id = 86;
+    else if(tag == "<p>") node->tag_id = 87;
+    else if(tag == "<b>") node->tag_id = 88;
+    else if(tag == "<i>") node->tag_id = 89;
+    else if(tag == "<u>") node->tag_id = 90;
     // add more
 }
 

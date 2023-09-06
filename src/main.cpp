@@ -10,17 +10,21 @@
 
 #include "nTree/treeImplement.hpp"
 
+#include "parser/htmlParse.hpp"
+
 int main() {
     /***htmlTokenise ht;
     std::list<Token> :: iterator it;
     std::list<Token> temp;
-    temp = ht.tokeniseHtml("/home/shobhit/Desktop/Coco-BrowserEngine/example/tags.html");
+    temp = ht.tokeniseHtml("/home/shobhit/Desktop/HtmlEngine/example/tags.html");
 
     it = temp.begin();
     while(it != temp.end()) {
         std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
     }***/
+
+    /*****
     treeImplement ti;
 
     // printing root node
@@ -66,5 +70,15 @@ int main() {
     std::cout << "reading depth first" << std::endl;
     // not working properly
     ti.preordrTrav(rt);
+     ****/
+
+    htmlParse hp;
+    struct treeNode* root;
+    root = hp.htmlParser("/home/shobhit/Desktop/HtmlEngine/example/tags.html");
+    std::list<treeNode*> :: iterator it;
+    it = root->childNode.begin();
+    root = *it;
+    treeImplement ti;
+    ti.preordrTrav(root);
     return 0;
 }
