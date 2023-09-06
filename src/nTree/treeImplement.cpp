@@ -42,23 +42,15 @@ void treeImplement::gotoParent(struct treeNode* cNode) {
         setCurrentNode(cNode->parentNode);
 }
 
-/*** REMOVE FOLLOWING COMMENTS ONCE FUNCTION IS FIXED***/
-// this function is not working properly
-// just leaving as it is to get blueprint for later
-void treeImplement::depthFirstRead(struct  treeNode* root_ptr) {
-    std::list<struct treeNode*> :: iterator it;
+
+void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
+    //std::cout << root_ptr->tag_id << std::endl;
+    std::cout << root_ptr << std::endl;
+    std::list<treeNode*> :: iterator it;
     it = root_ptr->childNode.begin();
-    if((root_ptr->childNode).size() == 0) {
-        std::cout << root_ptr << std::endl;
-        std::cout << "leaf node" << std::endl;
-    }
-    else {
-        while(it != root_ptr->childNode.end()) {
-            depthFirstRead(*it);
-            std::cout << root_ptr << std::endl;
-            std::cout << "left node" << std::endl;
-            it++;
-        }
+    while(it != root_ptr->childNode.end()) {
+        preordrTrav(*it);
+        it++;
     }
 }
 void treeImplement::addTagID(struct treeNode* node, std::string tag) {

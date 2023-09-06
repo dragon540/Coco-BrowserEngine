@@ -39,7 +39,7 @@ public:
     void setCurrentNode(struct treeNode* node);
     struct treeNode* insertNode(struct treeNode* pNode); // creates a child node for the pNode
     void gotoParent(struct treeNode* cNode); // sets current node to the parent node of the given node
-    void depthFirstRead(struct  treeNode* root_ptr);
+    void preordrTrav(struct  treeNode* root_ptr);
 
     // assigns a tag id to the node pointed through the pointer in the function argument depending upon the tag
     void addTagID(struct treeNode* node, std::string tag);

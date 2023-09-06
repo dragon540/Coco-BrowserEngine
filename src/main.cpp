@@ -26,7 +26,7 @@ int main() {
 
     // printing root node
     std::cout << "root node - " << ti.getCurrentNode() << std::endl;
-
+    struct treeNode *rt = ti.getCurrentNode();
     struct treeNode *l1t1, *l1t2, *l1t3;
     // 3 first level nodes created
     l1t1 = ti.insertNode(ti.getCurrentNode());
@@ -64,8 +64,8 @@ int main() {
 
     std::cout << "check is it level 1 node 2 - " << ti.getCurrentNode() << std::endl;
 
-    //std::cout << "reading depth first" << std::endl;
+    std::cout << "reading depth first" << std::endl;
     // not working properly
-    //ti.depthFirstRead(ti.getCurrentNode());
+    ti.preordrTrav(rt);
     return 0;
 }
