@@ -11,7 +11,6 @@
 #include "nTree/treeImplement.hpp"
 
 int main() {
-    std::cout << "Welcome to Coco browser engine" << std::endl;
     /***htmlTokenise ht;
     std::list<Token> :: iterator it;
     std::list<Token> temp;
