@@ -2,8 +2,8 @@
 // Created by shobhit on 10/8/23.
 //
 
-#ifndef COCO_BROWSERENGINE_HTMLTOKENISE_HPP
-#define COCO_BROWSERENGINE_HTMLTOKENISE_HPP
+#ifndef HTMLENGINE_HTMLTOKENISE_HPP
+#define HTMLENGINE_HTMLTOKENISE_HPP
 
 #include <string>
 #include <list>
@@ -24,4 +24,4 @@ public:
     int retTokNum(std::string* tok_val);
 };
 
-#endif //COCO_BROWSERENGINE_HTMLTOKENISE_HPP
+#endif //HTMLENGINE_HTMLTOKENISE_HPP

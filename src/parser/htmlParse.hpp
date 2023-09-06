@@ -2,8 +2,8 @@
 // Created by shobhit on 1/9/23.
 //
 
-#ifndef COCO_BROWSERENGINE_HTMLPARSE_HPP
-#define COCO_BROWSERENGINE_HTMLPARSE_HPP
+#ifndef HTMLENGINE_HTMLPARSE_HPP
+#define HTMLENGINE_HTMLPARSE_HPP
 
 #define OPENING_TAG 7
 #define CLOSING_TAG 8
@@ -23,4 +23,4 @@ private:
 public:
     struct treeNode* htmlParser(std::string fPath);
 };
-#endif //COCO_BROWSERENGINE_HTMLPARSE_HPP
+#endif //HTMLENGINE_HTMLPARSE_HPP

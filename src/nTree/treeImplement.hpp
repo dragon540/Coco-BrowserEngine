@@ -2,8 +2,8 @@
 // Created by shobhit on 26/8/23.
 //
 
-#ifndef COCO_BROWSERENGINE_TREEIMPLEMENT_HPP
-#define COCO_BROWSERENGINE_TREEIMPLEMENT_HPP
+#ifndef HTMLENGINE_TREEIMPLEMENT_HPP
+#define HTMLENGINE_TREEIMPLEMENT_HPP
 
 #include <list>
 #include <string>
@@ -39,4 +39,4 @@ public:
     void addImgPath(struct treeNode* node, std::string path);
 };
 
-#endif //COCO_BROWSERENGINE_TREEIMPLEMENT_HPP
+#endif //HTMLENGINE_TREEIMPLEMENT_HPP

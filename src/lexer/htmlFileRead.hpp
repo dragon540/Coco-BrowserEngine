@@ -2,8 +2,8 @@
 // Created by shobhit on 22/7/23.
 //
 
-#ifndef COCO_BROWSERENGINE_HTMLFILEREAD_HPP
-#define COCO_BROWSERENGINE_HTMLFILEREAD_HPP
+#ifndef HTMLENGINE_HTMLFILEREAD_HPP
+#define HTMLENGINE_HTMLFILEREAD_HPP
 
 #include <string>
 #include <list>
@@ -31,4 +31,4 @@ private:
 };
 
 
-#endif //COCO_BROWSERENGINE_HTMLFILEREAD_HPP
+#endif //HTMLENGINE_HTMLFILEREAD_HPP
