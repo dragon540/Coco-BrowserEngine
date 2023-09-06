@@ -66,9 +66,10 @@ void treeImplement::addTagID(struct treeNode* node, std::string tag) {
     else if(tag == "<head>") node->tag_id = 84;
     // add more
 }
+
 void treeImplement::addtxtContent(struct treeNode *node, std::string text) {
-    node->txtContent = text;
+    node->txtContent += text;
 }
-void treeImplement::addImgPath(struct treeNode *node, std::string path) {
-    node->imgPath = path;
+void treeImplement::addtagAttr(struct treeNode* node, std::string tagAttrStr) {
+    node->tagAttr = tagAttrStr;
 }

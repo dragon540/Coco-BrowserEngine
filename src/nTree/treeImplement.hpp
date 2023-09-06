@@ -12,13 +12,21 @@
 // operations to be performed :
 // insertion - of new nodes at a particular node
 // setting up data inside the node, when the pointer to the node is given
-// reading - depth first reading
+// reading - pre-order traversal
 struct treeNode {
     struct treeNode* parentNode;
     std::list<struct treeNode*> childNode;
+
+    // for unique identification of the type of node
+    // important for knowing how to render the given data
     int tag_id;
+
+    // defines tag attributes
+    // example - <Body bgcolor="blue">
+    std::string tagAttr = "";
+
+    // for textual data to be displayed
     std::string txtContent = "";
-    std::string imgPath = ""; // path to image file when applicable
 };
 
 class treeImplement {
@@ -35,8 +43,9 @@ public:
 
     // assigns a tag id to the node pointed through the pointer in the function argument depending upon the tag
     void addTagID(struct treeNode* node, std::string tag);
+
     void addtxtContent(struct treeNode* node, std::string text);
-    void addImgPath(struct treeNode* node, std::string path);
+    void addtagAttr(struct treeNode* node, std::string tagAttrStr);
 };
 
 #endif //HTMLENGINE_TREEIMPLEMENT_HPP
