@@ -7,12 +7,11 @@
 #include "lexer/fileRead.hpp"
 #include "lexer/htmlFileRead.hpp"
 #include "lexer/htmlTokenise.hpp"
-
 #include "nTree/treeImplement.hpp"
-
 #include "parser/htmlParse.hpp"
+#include "render.hpp"
 
-int main() {
+int main(int argc, char **argv) {
     /***htmlTokenise ht;
     std::list<Token> :: iterator it;
     std::list<Token> temp;
@@ -23,7 +22,6 @@ int main() {
         std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
     }***/
-
     /*****
     treeImplement ti;
 
@@ -71,8 +69,7 @@ int main() {
     // not working properly
     ti.preordrTrav(rt);
      ****/
-
-    htmlParse hp;
+    /***htmlParse hp;
     struct treeNode* root;
     root = hp.htmlParser("/home/shobhit/Desktop/HtmlEngine/example/tags.html");
     std::list<treeNode*> :: iterator it;
@@ -80,5 +77,6 @@ int main() {
     root = *it;
     treeImplement ti;
     ti.preordrTrav(root);
-    return 0;
+    return 0;***/
+    render("/home/shobhit/Desktop/HtmlEngine/example/tags.html", argc, argv);
 }
