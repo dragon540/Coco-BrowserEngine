@@ -12,9 +12,9 @@
 #include <gtk-3.0/gtk/gtk.h>
 
 // logic to render elements to the screen according to the nodes traversed is defined in activate()
-static void activate(GtkApplication* x, gpointer user_data);
+static void activate(GtkApplication* gApp, gpointer user_data);
 
 // renders the layout to the screen
-int render(std::string fPath, int argc, char **argv);
+int rendering(std::string fPath, int argc, char **argv);
 
 #endif //HTMLENGINE_RENDER_HPP

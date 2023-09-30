@@ -69,7 +69,7 @@ int main(int argc, char **argv) {
     // not working properly
     ti.preordrTrav(rt);
      ****/
-    /***htmlParse hp;
+    /**htmlParse hp;
     struct treeNode* root;
     root = hp.htmlParser("/home/shobhit/Desktop/HtmlEngine/example/tags.html");
     std::list<treeNode*> :: iterator it;
@@ -77,6 +77,8 @@ int main(int argc, char **argv) {
     root = *it;
     treeImplement ti;
     ti.preordrTrav(root);
-    return 0;***/
-    render("/home/shobhit/Desktop/HtmlEngine/example/tags.html", argc, argv);
+    return 0;
+    //render("/home/shobhit/Desktop/HtmlEngine/example/tags.html", argc, argv);
+    ***/
+    rendering("HtmlEngine/example/tags.html", argc, argv);
 }
