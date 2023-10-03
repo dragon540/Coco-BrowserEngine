@@ -22,9 +22,8 @@ int main(int argc, char **argv) {
         std::cout << it->tok_val << " ---- " << it->tok_attribute << std::endl;
         it++;
     }***/
-    /*****
     treeImplement ti;
-
+    /*****
     // printing root node
     std::cout << "root node - " << ti.getCurrentNode() << std::endl;
     struct treeNode *rt = ti.getCurrentNode();
@@ -67,18 +66,11 @@ int main(int argc, char **argv) {
 
     std::cout << "reading depth first" << std::endl;
     // not working properly
-    ti.preordrTrav(rt);
-     ****/
-    /**htmlParse hp;
-    struct treeNode* root;
-    root = hp.htmlParser("/home/shobhit/Desktop/HtmlEngine/example/tags.html");
-    std::list<treeNode*> :: iterator it;
-    it = root->childNode.begin();
-    root = *it;
-    treeImplement ti;
-    ti.preordrTrav(root);
+    //ti.preordrTrav(rt);
+     ***/
+    htmlParse hp;
+    struct treeNode* pTroot = hp.htmlParser("../example/tags.html");
+    ti.preordrTrav(pTroot);
+    rendering("../example/tags.html", argc, argv);
     return 0;
-    //render("/home/shobhit/Desktop/HtmlEngine/example/tags.html", argc, argv);
-    ***/
-    rendering("HtmlEngine/example/tags.html", argc, argv);
 }
