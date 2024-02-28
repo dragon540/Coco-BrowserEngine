@@ -12,6 +12,12 @@
 #define CLOSING_TAG 8
 #define INNER_TEXT 9
 
+/***enum txt{
+    OPENING_TAG,
+    CLOSING_TAG,
+    INNER_TEXT
+};***/
+
 struct Token {
 public:
     std::string tok_val;

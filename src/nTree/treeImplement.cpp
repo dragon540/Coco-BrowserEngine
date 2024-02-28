@@ -42,8 +42,14 @@ void treeImplement::gotoParent(struct treeNode* cNode) {
         setCurrentNode(cNode->parentNode);
 }
 
+int tab = 0;
 void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
+    std::cout << std::endl;
+    for(int i = 0;i<tab;i++) {
+        std::cout << '\t';
+    }
     std::cout << "( ";
+    tab++;
     //std::cout << root_ptr->tag_id << std::endl;
     std::cout << root_ptr->tag_id << " ";
     //std::cout << root_ptr->txtContent << std::endl;
@@ -54,6 +60,7 @@ void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
     while(it != root_ptr->childNode.end()) {
         preordrTrav(*it);
         std::cout << " )";
+        tab--;
         it++;
     }
 }
