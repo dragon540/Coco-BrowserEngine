@@ -6,11 +6,12 @@
 #include "../lexer/htmlTokenise.hpp"
 #include "../nTree/treeImplement.hpp"
 
-void htmlParse::createAndSetPtr() {
+void htmlParse::createNodeAndSetPtr() {
     struct treeNode *tempTreeNode = DOM_tree.insertNode(DOM_tree.getCurrentNode());
     DOM_tree.setCurrentNode(tempTreeNode);
 }
-int htmlParse::checkIsCloseTagComplementary(std::string o_tag, std::string c_tag) {
+
+int htmlParse::isCloseTagComplementaryToOpenTag(std::string o_tag, std::string c_tag) {
     for(unsigned int idx = 1; idx < o_tag.length()-1; idx++) {
         if(o_tag[idx] != c_tag[idx+1])
             return 0;
@@ -29,7 +30,7 @@ struct treeNode* htmlParse::htmlParser(std::string fPath) {
         switch (it->tok_attribute) {
             case OPENING_TAG:
                 // create node and set current node pointer to this new node
-                createAndSetPtr();
+                createNodeAndSetPtr();
 
                 // add tag id to the node
                 DOM_tree.addTagID(DOM_tree.getCurrentNode(), it->tok_val);

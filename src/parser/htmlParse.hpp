@@ -18,8 +18,8 @@ class htmlParse {
     treeImplement DOM_tree;
     const struct treeNode *DOM_root = DOM_tree.getCurrentNode(); // root node
 private:
-    void createAndSetPtr();
-    int checkIsCloseTagComplementary(std::string o_tag, std::string c_tag);
+    void createNodeAndSetPtr();
+    int isCloseTagComplementaryToOpenTag(std::string o_tag, std::string c_tag);
 public:
     struct treeNode* htmlParser(std::string fPath);
 };

@@ -71,6 +71,7 @@ int main(int argc, char **argv) {
     htmlParse hp;
     struct treeNode* pTroot = hp.htmlParser("../example/tags.html");
     ti.preordrTrav(pTroot);
+    sleep(3);
     rendering("../example/tags.html", argc, argv);
     return 0;
 }
