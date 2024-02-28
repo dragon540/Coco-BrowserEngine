@@ -23,7 +23,7 @@ int htmlParse::isCloseTagComplementaryToOpenTag(std::string o_tag, std::string c
 // returns root of the parsed html DOM
 struct treeNode* htmlParse::htmlParser(std::string fPath) {
     htmlTokenise tokeniser;
-    std::list<Token> htmlTokenTable = tokeniser.tokeniseHtml(fPath); // tokenising html tags
+    std::list<Token> htmlTokenTable = tokeniser.tokeniseHtml(fPath); // tokenising html file
     std::list<Token> :: iterator it;
     it = htmlTokenTable.begin();
     while(it != htmlTokenTable.end()) {

@@ -9,7 +9,7 @@
 #include "lexer/htmlTokenise.hpp"
 #include "nTree/treeImplement.hpp"
 #include "parser/htmlParse.hpp"
-#include "render.hpp"
+#include "graphics/render.hpp"
 
 int main(int argc, char **argv) {
     /***htmlTokenise ht;

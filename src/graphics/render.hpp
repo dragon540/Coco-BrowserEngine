@@ -7,7 +7,7 @@
 
 #include <string>
 
-#include "parser/htmlParse.hpp"
+#include "../parser/htmlParse.hpp"
 
 #include <gtk-3.0/gtk/gtk.h>
 

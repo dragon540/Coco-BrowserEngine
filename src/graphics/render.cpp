@@ -3,8 +3,8 @@
 //
 
 #include "render.hpp"
-#include "parser/htmlParse.hpp"
-#include "nTree/treeImplement.hpp"
+#include "../parser/htmlParse.hpp"
+#include "../nTree/treeImplement.hpp"
 
 #include <gtk-3.0/gtk/gtk.h>
 #include <iostream>
