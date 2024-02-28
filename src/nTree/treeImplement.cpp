@@ -17,10 +17,10 @@ treeImplement::treeImplement() {
     setCurrentNode(temp);
 }
 struct treeNode* treeImplement::getCurrentNode() {
-    return currNode;
+    return currentNode;
 }
 void treeImplement::setCurrentNode(struct treeNode *node) {
-    currNode = node;
+    currentNode = node;
 }
 
 // creates a child node for the pNode
@@ -43,7 +43,7 @@ void treeImplement::gotoParent(struct treeNode* cNode) {
 }
 
 int tab = 0;
-void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
+void treeImplement::preorderTraversal(struct  treeNode* root_ptr) {
     std::cout << std::endl;
     for(int i = 0;i<tab;i++) {
         std::cout << '\t';
@@ -52,13 +52,13 @@ void treeImplement::preordrTrav(struct  treeNode* root_ptr) {
     tab++;
     //std::cout << root_ptr->tag_id << std::endl;
     std::cout << root_ptr->tag_id << " ";
-    //std::cout << root_ptr->txtContent << std::endl;
-    std::cout << root_ptr->txtContent << " ";
+    //std::cout << root_ptr->data << std::endl;
+    std::cout << root_ptr->data << " ";
     std::cout << " -> ";
     std::list<treeNode*> :: iterator it;
     it = root_ptr->childNode.begin();
     while(it != root_ptr->childNode.end()) {
-        preordrTrav(*it);
+        preorderTraversal(*it);
         std::cout << " )";
         tab--;
         it++;
@@ -77,7 +77,7 @@ void treeImplement::addTagID(struct treeNode* node, std::string tag) {
 }
 
 void treeImplement::addtxtContent(struct treeNode *node, std::string text) {
-    node->txtContent += text;
+    node->data += text;
 }
 void treeImplement::addtagAttr(struct treeNode* node, std::string tagAttrStr) {
     node->tagAttr = tagAttrStr;

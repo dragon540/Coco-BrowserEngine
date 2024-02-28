@@ -66,11 +66,11 @@ int main(int argc, char **argv) {
 
     std::cout << "reading depth first" << std::endl;
     // not working properly
-    //ti.preordrTrav(rt);
+    //ti.preorderTraversal(rt);
      ***/
     htmlParse hp;
     struct treeNode* pTroot = hp.htmlParser("../example/tags.html");
-    ti.preordrTrav(pTroot);
+    ti.preorderTraversal(pTroot);
     sleep(3);
     rendering("../example/tags.html", argc, argv);
     return 0;

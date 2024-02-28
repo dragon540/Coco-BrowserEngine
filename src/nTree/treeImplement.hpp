@@ -17,7 +17,10 @@ struct treeNode {
     struct treeNode* parentNode;
     std::list<struct treeNode*> childNode;
 
-    // for unique identification of the type of node
+    // for identifying a node contains data or not
+    int type_id;
+
+    // for unique identification of the type of node/element
     // important for knowing how to render the given data
     int tag_id;
 
@@ -25,21 +28,26 @@ struct treeNode {
     // example - <Body bgcolor="blue">
     std::string tagAttr = "";
 
-    // for textual data to be displayed
-    std::string txtContent = "";
+    // for data to be displayed
+    std::string data = "";
 };
 
 class treeImplement {
 private:
     // current node pointer
-    struct treeNode* currNode = NULL;
+    struct treeNode* currentNode = NULL;
 public:
     treeImplement(); // creates a root node
     struct treeNode* getCurrentNode();
     void setCurrentNode(struct treeNode* node);
-    struct treeNode* insertNode(struct treeNode* pNode); // creates a child node for the pNode
-    void gotoParent(struct treeNode* cNode); // sets current node to the parent node of the given node
-    void preordrTrav(struct  treeNode* root_ptr);
+
+    // creates a child node for the pNode
+    struct treeNode* insertNode(struct treeNode* pNode);
+
+    // sets current node to the parent node of the given node
+    void gotoParent(struct treeNode* cNode);
+
+    void preorderTraversal(struct  treeNode* root_ptr);
 
     // assigns a tag id to the node pointed through the pointer in the function argument depending upon the tag
     void addTagID(struct treeNode* node, std::string tag);
