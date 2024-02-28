@@ -18,7 +18,7 @@ struct treeNode {
     std::list<struct treeNode*> childNode;
 
     // for identifying a node contains data or not
-    int type_id;
+    int node_type_id;
 
     // for unique identification of the type of node/element
     // important for knowing how to render the given data

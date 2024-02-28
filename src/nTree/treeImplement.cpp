@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <iostream>
 
+#include "../defs.hpp"
+
 // class constructor
 // creates a root node for the tree
 // and sets the current node pointer to the root node
@@ -65,14 +67,20 @@ void treeImplement::preorderTraversal(struct  treeNode* root_ptr) {
     }
 }
 void treeImplement::addTagID(struct treeNode* node, std::string tag) {
-    if(tag == "<Html>") node->tag_id = 83;
-    else if(tag == "<Head>") node->tag_id = 84;
-    else if(tag == "<title>") node->tag_id = 85;
-    else if(tag == "<Body>") node->tag_id = 86;
-    else if(tag == "<p>") node->tag_id = 87;
-    else if(tag == "<b>") node->tag_id = 88;
-    else if(tag == "<i>") node->tag_id = 89;
-    else if(tag == "<u>") node->tag_id = 90;
+    if(tag == "<Html>") node->tag_id = HTML_TAG;
+    else if(tag == "<Head>") node->tag_id = HEAD_TAG;
+    else if(tag == "<title>") node->tag_id = TITLE_TAG;
+    else if(tag == "<Body>") node->tag_id = BODY_TAG;
+    else if(tag == "<p>") node->tag_id = PARAGRAPH_TAG;
+    else if(tag == "<h1>") node->tag_id = HEADING1_TAG;
+    else if(tag == "<h2>") node->tag_id = HEADING2_TAG;
+    else if(tag == "<h3>") node->tag_id = HEADING3_TAG;
+    else if(tag == "<h4>") node->tag_id = HEADING4_TAG;
+    else if(tag == "<h5>") node->tag_id = HEADING5_TAG;
+    else if(tag == "<h6>") node->tag_id = HEADING6_TAG;
+    else if(tag == "<b>") node->tag_id = BOLD_TAG;
+    else if(tag == "<i>") node->tag_id = ITALICS_TAG;
+    else if(tag == "<u>") node->tag_id = UNDERLINE_TAG;
     // add more
 }
 
