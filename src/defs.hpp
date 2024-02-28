@@ -1,0 +1,25 @@
+//
+// Created by shobhit on 28/2/24.
+//
+
+#ifndef HTMLENGINE_DEFS_HPP
+#define HTMLENGINE_DEFS_HPP
+
+enum TagID {
+    HTML_TAG = 50,
+    HEAD_TAG,
+    TITLE_TAG,
+    BODY_TAG,
+    PARAGRAPH_TAG,
+    HEADING1_TAG,
+    HEADING2_TAG,
+    HEADING3_TAG,
+    HEADING4_TAG,
+    HEADING5_TAG,
+    HEADING6_TAG,
+    BOLD_TAG,
+    ITALICS_TAG,
+    UNDERLINE_TAG
+};
+
+#endif //HTMLENGINE_DEFS_HPP
